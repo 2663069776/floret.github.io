@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hexo+云服务器搭建博客</title>
+      <link href="/posts/9f65.html"/>
+      <url>/posts/9f65.html</url>
+      
+        <content type="html"><![CDATA[<p>作者的搭建环境：CentOS7.7+Nginx1.18+Node.js12.4.0+hexo</p><h3 id="1-安装编译源码依赖包"><a href="#1-安装编译源码依赖包" class="headerlink" title="1.安装编译源码依赖包"></a>1.安装编译源码依赖包</h3><pre class=" language-code"><code class="language-code">yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel</code></pre><pre class=" language-code"><code class="language-code">yum install -y gcc perl-ExtUtils-MakeMaker</code></pre><h3 id="2-安装及配置Nginx"><a href="#2-安装及配置Nginx" class="headerlink" title="2.安装及配置Nginx"></a>2.安装及配置Nginx</h3><p>因为我的Yum仓库里有Nginx的包所以就直接Yum安装了，如果你的没有就自行百度Nginx的安装</p><h4 id="2-1安装Nginx"><a href="#2-1安装Nginx" class="headerlink" title="2.1安装Nginx"></a>2.1安装Nginx</h4><pre class=" language-code"><code class="language-code">yum install -y nginx    //安装Nginxsystemctl start nginx  //启动Nginxsystemctl enable nginx //开机启动Nginx</code></pre><h4 id="2-2配置Nginx"><a href="#2-2配置Nginx" class="headerlink" title="2.2配置Nginx"></a>2.2配置Nginx</h4><p>针对不同版本不同方式安装的Nginx配置文件位置可能不一样，我们可以用<font color="red">nginx -t</font>查看配置文件位置，也可以用检查语法错误,我的配置文件在<font color="red">/etc/nginx/nginx.conf</font>下</p><p><font color="red">vim /etc/nginx/nginx.conf</font>命令进行编辑</p><pre class=" language-code"><code class="language-code">server{     listen       80 default_server;     listen       [::]:80 default_server;     server_name  www.xxx.com;       #修改成你的域名     root         /MyBlog/public/;        #修改成网站目录下的public文件夹      # Load configuration files for the default server block.      include /etc/nginx/default.d/*.conf;      location / {        }      error_page 404 /404.html;            location = /40x.html {        }      error_page 500 502 503 504 /50x.html;            location = /50x.html {        }}</code></pre><p>然后<font color="red">systemctl restart nginx</font>重启服务</p><h3 id="3-安装Node-js"><a href="#3-安装Node-js" class="headerlink" title="3.安装Node.js"></a>3.安装Node.js</h3><h4 id="3-1下载Node-js"><a href="#3-1下载Node-js" class="headerlink" title="3.1下载Node.js"></a>3.1下载Node.js</h4><p><a href="https://nodejs.org/dist/" target="_blank" rel="noopener">https://nodejs.org/dist/</a><br>这是Node.js下载目录自行寻找最新版本</p><pre class=" language-code"><code class="language-code">wget https://nodejs.org/dist/v12.4.0/node-v12.4.0-linux-x64.tar.xz</code></pre><h4 id="3-2解压Node-js压缩包"><a href="#3-2解压Node-js压缩包" class="headerlink" title="3.2解压Node.js压缩包"></a>3.2解压Node.js压缩包</h4><pre class=" language-code"><code class="language-code">xz -d node-v12.4.0-linux-x64.tar.xztar -xvf node-v12.4.0-linux-x64.tar</code></pre><p>移动到<font color="red">/usr/local/node</font>目录下</p><pre class=" language-code"><code class="language-code">mv node-v12.4.0-linux-x64 /usr/local/node</code></pre><h4 id="3-3配置环境变量"><a href="#3-3配置环境变量" class="headerlink" title="3.3配置环境变量"></a>3.3配置环境变量</h4><pre class=" language-code"><code class="language-code">#编辑这个文件vim /etc/profile#添加内容，指定Node目录export PATH=$PATH:/usr/local/node/bin#刷新一下环境source /etc/profile</code></pre><p>输入<font color="red">node -v</font>测试Node.js是否安装成功，输出版本即完成安装</p><h3 id="4-安装Hexo框架"><a href="#4-安装Hexo框架" class="headerlink" title="4.安装Hexo框架"></a>4.安装Hexo框架</h3><h4 id="4-1创建博客目录"><a href="#4-1创建博客目录" class="headerlink" title="4.1创建博客目录"></a>4.1创建博客目录</h4><p>这里作者在根目录安装，如要在其他目录安装，请自行修改nginx配置路径，不然访问不上</p><pre class=" language-code"><code class="language-code">#创建目录mkdir /MyBlog#进入目录cd /MyBlog</code></pre><h4 id="4-2安装Hexo"><a href="#4-2安装Hexo" class="headerlink" title="4.2安装Hexo"></a>4.2安装Hexo</h4><pre class=" language-code"><code class="language-code">npm install -g hexo-cil</code></pre><h4 id="4-3初始化Hexo"><a href="#4-3初始化Hexo" class="headerlink" title="4.3初始化Hexo"></a>4.3初始化Hexo</h4><pre class=" language-code"><code class="language-code">#要在MyBlog下执行哦~hexo init</code></pre><h4 id="4-4修改配置"><a href="#4-4修改配置" class="headerlink" title="4.4修改配置"></a>4.4修改配置</h4><p><font color="red">vim _config.yml</font></p><pre class=" language-code"><code class="language-code"># Hexo Configuration  ## Docs: https://hexo.io/docs/configuration.html## Source: https://github.com/hexojs/hexo/# Site 站点信息设置title:凉城      #站点名字subtitle:  #副标题description: #站描述author:凉城 #作者language: zh-CN #语言timezone:# URL 链接设置## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'url: http://www.liuchunhui.work #设置成你的域名 root: / permalink: :year/:month/:day/:title/ permalink_defaults: --------------------------------------------------------------下面省略，跳到最下面deploy:  type:      #类型  repo:      #git仓库地址，我留空，因为咱们不用git部署  branch: master             message: '站点更新:{{now("YYYY-MM-DD HH/mm/ss")}}'     </code></pre><h3 id="5-修改主题"><a href="#5-修改主题" class="headerlink" title="5.修改主题"></a>5.修改主题</h3><h4 id="5-1主题下载"><a href="#5-1主题下载" class="headerlink" title="5.1主题下载"></a>5.1主题下载</h4><p><a href="https://hexo.io/themes/这是其他博主分享的主题，找一个自己喜欢的下载" target="_blank" rel="noopener">https://hexo.io/themes/这是其他博主分享的主题，找一个自己喜欢的下载</a></p><h4 id="5-2使用主题"><a href="#5-2使用主题" class="headerlink" title="5.2使用主题"></a>5.2使用主题</h4><p>通过工具上传主题到博客根目录下的一个叫<font color="red">themes</font>的文件夹内，然后解压主题</p><pre class=" language-code"><code class="language-code">#解压完后编辑博客根目录下的_config.ymlvim _config.yml</code></pre><p align="center">找到theme值,然后修改成自己的主题名称即可</p><p><img src="https://gitee.com//luckyfloret/blogimage/raw/master/img/20200504021550.png" alt=""></p><h3 id="6-部署与访问测试"><a href="#6-部署与访问测试" class="headerlink" title="6.部署与访问测试"></a>6.部署与访问测试</h3><pre class=" language-code"><code class="language-code">#编译Hexohexo generate</code></pre><p>然后再去访问一下你的网站就发现部署成功了</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第一篇文章</title>
+      <link href="/posts/undefined.html"/>
+      <url>/posts/undefined.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="作者介绍"><a href="#作者介绍" class="headerlink" title="作者介绍"></a><center>作者介绍</center></h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大家好，我是作者凉城，为什么搭建这个博客呢？因为我有一个朋友之前搭建了，然后我觉得挺好玩的，所以就搭建了一个，这个博客是用Hexo+云服务器搭建的，之后作者也会写一个搭建教程，还有就是作者也会把一些关于学习的奉献上来。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 关于作者 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关于作者 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
