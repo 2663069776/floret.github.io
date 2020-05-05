@@ -415,14 +415,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    332
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 				
@@ -455,7 +455,97 @@ make prefix=/usr/local/git install   //安装到该目录</code></pre>
 <p>编译好后配置环境变量</p>
 <pre class=" language-code"><code class="language-code">vim /etc/profile</code></pre>
 <p>在文件最下面写入变量</p>
-<script>
+<pre class=" language-code"><code class="language-code">export PATH=$PATH:/usr/local/git/bin    //这个目录是刚刚编译安装Git的目录</code></pre>
+<p>配置好变量后刷新一下</p>
+<pre class=" language-code"><code class="language-code">source /etc/profile</code></pre>
+<p>最后用git –version查看版本，可以看到Git的版本号为2.9.5表示已经安装成功了</p>
+<h3 id="2-配置Git用户"><a href="#2-配置Git用户" class="headerlink" title="2.配置Git用户"></a>2.配置Git用户</h3><pre class=" language-code"><code class="language-code">adduser git     //创建用户
+passwd git      //设置用户密码
+chmod 740 /etc/sudoers  //赋予这个文件权限
+vim /etc/sudoers        //编辑这个文件</code></pre>
+<p>在配置中找到这条记录</p>
+<pre class=" language-code"><code class="language-code">## Allow root to run any commands anywhere
+root    ALL=(ALL)       ALL
+
+#在这条记录的下面添加一个Git配置
+git    ALL=(ALL)       ALL</code></pre>
+<p>然后把权限改回来<font color="red">chmod 400 /etc/sudoers</font></p>
+<h3 id="3-安装及配置Nginx"><a href="#3-安装及配置Nginx" class="headerlink" title="3.安装及配置Nginx"></a>3.安装及配置Nginx</h3><p>因为我的Yum仓库里有Nginx的包所以就直接Yum安装了，如果你的没有就自行百度Nginx的安装</p>
+<h4 id="3-1安装Nginx"><a href="#3-1安装Nginx" class="headerlink" title="3.1安装Nginx"></a>3.1安装Nginx</h4><pre class=" language-code"><code class="language-code">yum install -y nginx    //安装Nginx
+systemctl start nginx  //启动Nginx
+systemctl enable nginx //开机启动Nginx</code></pre>
+<h4 id="3-2配置Nginx"><a href="#3-2配置Nginx" class="headerlink" title="3.2配置Nginx"></a>3.2配置Nginx</h4><p>针对不同版本不同方式安装的Nginx配置文件位置可能不一样，我们可以用<font color="red">nginx -t</font>查看配置文件位置，也可以用检查语法错误,我的配置文件在<font color="red">/etc/nginx/nginx.conf</font>下</p>
+<p><font color="red">vim /etc/nginx/nginx.conf</font>命令进行编辑</p>
+<pre class=" language-code"><code class="language-code">server{
+     listen       80 default_server;
+     listen       [::]:80 default_server;
+     server_name  www.xxx.com;       #修改成你的域名
+     root         /MyBlog/public/;        #修改成网站目录下的public文件夹
+
+      # Load configuration files for the default server block.
+      include /etc/nginx/default.d/*.conf;
+      location / {
+        }
+
+      error_page 404 /404.html;
+            location = /40x.html {
+        }
+
+      error_page 500 502 503 504 /50x.html;
+            location = /50x.html {
+        }
+}</code></pre>
+<p>然后<font color="red">systemctl restart nginx</font>重启服务</p>
+<h3 id="4-安装Node-js"><a href="#4-安装Node-js" class="headerlink" title="4.安装Node.js"></a>4.安装Node.js</h3><h4 id="4-1下载Node-js"><a href="#4-1下载Node-js" class="headerlink" title="4.1下载Node.js"></a>4.1下载Node.js</h4><p><a href="https://nodejs.org/dist/" target="_blank" rel="noopener">https://nodejs.org/dist/</a><br>这是Node.js下载目录自行寻找最新版本</p>
+<pre class=" language-code"><code class="language-code">wget https://nodejs.org/dist/v12.4.0/node-v12.4.0-linux-x64.tar.xz</code></pre>
+<h4 id="4-2解压Node-js压缩包"><a href="#4-2解压Node-js压缩包" class="headerlink" title="4.2解压Node.js压缩包"></a>4.2解压Node.js压缩包</h4><pre class=" language-code"><code class="language-code">xz -d node-v12.4.0-linux-x64.tar.xz
+tar -xvf node-v12.4.0-linux-x64.tar</code></pre>
+<p>移动到<font color="red">/usr/local/node</font>目录下</p>
+<pre class=" language-code"><code class="language-code">mv node-v12.4.0-linux-x64 /usr/local/node</code></pre>
+<h4 id="4-3配置环境变量"><a href="#4-3配置环境变量" class="headerlink" title="4.3配置环境变量"></a>4.3配置环境变量</h4><pre class=" language-code"><code class="language-code">#编辑这个文件
+vim /etc/profile
+
+#添加内容，指定Node目录
+export PATH=$PATH:/usr/local/node/bin
+
+#刷新一下环境
+source /etc/profile</code></pre>
+<p>输入<font color="red">node -v</font>测试Node.js是否安装成功，输出版本即完成安装</p>
+<h3 id="5-安装Hexo框架"><a href="#5-安装Hexo框架" class="headerlink" title="5.安装Hexo框架"></a>5.安装Hexo框架</h3><h4 id="5-1创建博客目录"><a href="#5-1创建博客目录" class="headerlink" title="5.1创建博客目录"></a>5.1创建博客目录</h4><p>这里作者在根目录安装，如要在其他目录安装，请自行修改nginx配置路径，不然访问不上</p>
+<pre class=" language-code"><code class="language-code">#创建目录
+mkdir /MyBlog
+
+#进入目录
+cd /MyBlog</code></pre>
+<h4 id="5-2安装Hexo"><a href="#5-2安装Hexo" class="headerlink" title="5.2安装Hexo"></a>5.2安装Hexo</h4><pre class=" language-code"><code class="language-code">npm install -g hexo-cil</code></pre>
+<h4 id="5-3初始化Hexo"><a href="#5-3初始化Hexo" class="headerlink" title="5.3初始化Hexo"></a>5.3初始化Hexo</h4><pre class=" language-code"><code class="language-code">#要在MyBlog下执行哦~
+hexo init</code></pre>
+<h4 id="5-4修改配置"><a href="#5-4修改配置" class="headerlink" title="5.4修改配置"></a>5.4修改配置</h4><p><font color="red">vim _config.yml</font></p>
+<pre class=" language-code"><code class="language-code"># Hexo Configuration  
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site 站点信息设置
+title:凉城      #站点名字
+subtitle:  #副标题
+description: #站描述
+author:凉城 #作者
+language: zh-CN #语言
+timezone:
+
+# URL 链接设置
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://www.xxx.com #设置成你的域名 
+root: / 
+permalink: :year/:month/:day/:title/ 
+permalink_defaults: 
+--------------------------------------------------------------下面省略，跳到最下面
+deploy:
+  type: git     #类型
+  repo: git@github.com:luckyfloret/luckyfloret.github.io.git       #git仓库地址,里面的luckyfloret是github的仓库地址
+  branch: master           
+  message: '站点更新:{{now("YYYY-MM-DD HH/mm/ss")}}'     </code></pre>
+<h3 id="6部署到GitHub上"><a href="#6部署到GitHub上" class="headerlink" title="6部署到GitHub上"></a>6部署到GitHub上</h3><h4 id="6-1设置本机的Git全局配置"><a href="#6-1设置本机的Git全局配置" class="headerlink" title="6.1设置本机的Git全局配置"></a>6.1设置本机的Git全局配置</h4><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -970,30 +1060,29 @@ make prefix=/usr/local/git install   //安装到该目录</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/ac76.html">
+                <a href="/posts/9f65.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Hexo+Github+云服务器搭建博客">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Hexo+云服务器搭建博客">
                         
-                        <span class="card-title">Hexo+Github+云服务器搭建博客</span>
+                        <span class="card-title">Hexo+云服务器搭建博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo+Github+云服务器搭建博客实现双重部署
+                            Hexo+云服务器搭建Blog
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-05
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-05
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1006,7 +1095,6 @@ make prefix=/usr/local/git install   //安装到该目录</code></pre>
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1029,19 +1117,19 @@ make prefix=/usr/local/git install   //安装到该目录</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/9f65.html">
+                <a href="/posts/e479.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Hexo+云服务器搭建博客">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="第一篇文章">
                         
-                        <span class="card-title">Hexo+云服务器搭建博客</span>
+                        <span class="card-title">第一篇文章</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo+云服务器搭建Blog
+                            关于作者
                         
                     </div>
                     <div class="publish-info">
@@ -1052,8 +1140,8 @@ make prefix=/usr/local/git install   //安装到该目录</code></pre>
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
+                            <a href="/categories/%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85/" class="post-category">
+                                    关于作者
                                 </a>
                             
                             
@@ -1063,12 +1151,8 @@ make prefix=/usr/local/git install   //安装到该目录</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85/">
+                        <span class="chip bg-color">关于作者</span>
                     </a>
                     
                 </div>
@@ -1262,7 +1346,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.3k</span>&nbsp;字
+                class="white-color">2.1k</span>&nbsp;字
             
             
             
