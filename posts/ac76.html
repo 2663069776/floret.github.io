@@ -415,7 +415,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.5k
                 </div>
                 
 
@@ -538,26 +538,45 @@ timezone:
 url: http://www.xxx.com #设置成你的域名 
 root: / 
 permalink: :year/:month/:day/:title/ 
-permalink_defaults: 
---------------------------------------------------------------下面省略，跳到最下面
-deploy:
-  type: git     #类型
-  repo: git@github.com:luckyfloret/luckyfloret.github.io.git       #git仓库地址,里面的luckyfloret是github的仓库地址，你看到这里的时候可能会疑惑，所以请先看看章节6，再回头配置这个，千万不要忘记哦
-  branch: master           
-  message: '站点更新:{{now("YYYY-MM-DD HH/mm/ss")}}'     </code></pre>
+permalink_defaults: </code></pre>
 <h3 id="6-部署到GitHub上"><a href="#6-部署到GitHub上" class="headerlink" title="6.部署到GitHub上"></a>6.部署到GitHub上</h3><p>github的注册在这里我就不多说了</p>
-<p>在创建github仓库之前先干一件事情，就是把github的私有邮箱关掉，不然会报错哦，请看图<br><img src="https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505173815.png" alt="image-20200505173812384"><br><img src="https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505174240.png" alt="image-20200505174232915"></p>
+<p>在创建github仓库之前先干一件事情，就是把github的私有邮箱关掉，不然会报错哦，请看图<br><img src="https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505173815.png" alt=""><br><img src="https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505174240.png" alt=""></p>
 <h4 id="6-1创建Github仓库"><a href="#6-1创建Github仓库" class="headerlink" title="6.1创建Github仓库"></a>6.1创建Github仓库</h4><p align="center">看图</p>
-![image-20200505172504474](https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505172508.png)
-![image-20200505173335454](https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505173337.png)
 
+<p><img src="https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505172508.png" alt=""></p>
+<p><img src="https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505173337.png" alt=""></p>
 <h4 id="6-2设置本机的Git全局配置"><a href="#6-2设置本机的Git全局配置" class="headerlink" title="6.2设置本机的Git全局配置"></a>6.2设置本机的Git全局配置</h4><pre class=" language-code"><code class="language-code">git config --global user.email example@qq.com //这里的eamil改成自己GitHub上的邮件地址 
 git config --global user.name luckyfloret //这里的name改成你Github的用户名</code></pre>
 <h4 id="6-3生成ssh密码"><a href="#6-3生成ssh密码" class="headerlink" title="6.3生成ssh密码"></a>6.3生成ssh密码</h4><p>生成ssh密钥的作用是将本地文件部署到Github</p>
 <pre class=" language-code"><code class="language-code">cd   //进到根目录
 ssh-keygen -t rsa -C example@qq.com    //不带-C和自己用户名邮箱Github不认可
 less .ssh/id_rsa.pub     /查看密钥</code></pre>
-<h4 id="6-4在Github上导入ssh密钥"><a href="#6-4在Github上导入ssh密钥" class="headerlink" title="6.4在Github上导入ssh密钥"></a>6.4在Github上导入ssh密钥</h4><p>执行<font color="red">less .ssh/id_rsa.pub</font>将里面的内容全部复制</p>
+<h4 id="6-4在Github上导入ssh密钥"><a href="#6-4在Github上导入ssh密钥" class="headerlink" title="6.4在Github上导入ssh密钥"></a>6.4在Github上导入ssh密钥</h4><p>执行<font color="red">less .ssh/id_rsa.pub</font>将里面的内容全部复制<br><img src="https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505173815.png" alt=""></p>
+<p><img src="https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505180103.png" alt=""></p>
+<h4 id="6-5配置Hexo与GitHub仓库同步"><a href="#6-5配置Hexo与GitHub仓库同步" class="headerlink" title="6.5配置Hexo与GitHub仓库同步"></a>6.5配置Hexo与GitHub仓库同步</h4><pre class=" language-code"><code class="language-code">deploy:
+  type: git     #类型
+  repo: git@github.com:luckyfloret/luckyfloret.github.io.git       #git仓库地址,里面的luckyfloret是github的仓库地址
+  branch: master           
+  message: '站点更新:{{now("YYYY-MM-DD HH/mm/ss")}}'     </code></pre>
+<h3 id="7-修改主题"><a href="#7-修改主题" class="headerlink" title="7.修改主题"></a>7.修改主题</h3><h4 id="7-1主题下载"><a href="#7-1主题下载" class="headerlink" title="7.1主题下载"></a>7.1主题下载</h4><p><a href="https://hexo.io/themes/这是其他博主分享的主题，找一个自己喜欢的下载" target="_blank" rel="noopener">https://hexo.io/themes/这是其他博主分享的主题，找一个自己喜欢的下载</a></p>
+<h4 id="7-2使用主题"><a href="#7-2使用主题" class="headerlink" title="7.2使用主题"></a>7.2使用主题</h4><p>通过工具上传主题到博客根目录下的一个叫<font color="red">themes</font>的文件夹内，然后解压主题</p>
+<pre class=" language-code"><code class="language-code">#解压完后编辑博客根目录下的_config.yml
+vim _config.yml</code></pre>
+<p align="center">找到theme值,然后修改成自己的主题名称即可</p>
+
+<p><img src="https://gitee.com//luckyfloret/blogimage/raw/master/img/20200504021550.png" alt=""></p>
+<h3 id="8-部署与访问测试"><a href="#8-部署与访问测试" class="headerlink" title="8.部署与访问测试"></a>8.部署与访问测试</h3><pre class=" language-code"><code class="language-code">#在博客根目录下执行哦
+
+#编译Hexo
+hexo generate
+
+#将本地仓库更新至Github仓库
+hexo deployer</code></pre>
+<p>执行 hexo deployer 后报错：<font color="red">ERROR Deployer not found: git</font></p>
+<p>这是没安装插件，安装一下插件就好了</p>
+<pre class=" language-code"><code class="language-code">npm install --save hexo-deployer-git</code></pre>
+<p>然后再执行hexo deployer就发现部署成功了</p>
+<p>测试访问：<a href="https://luckyfloret.github.io" target="_blank" rel="noopener">https://luckyfloret.github.io</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1365,7 +1384,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.3k</span>&nbsp;字
+                class="white-color">2.5k</span>&nbsp;字
             
             
             
