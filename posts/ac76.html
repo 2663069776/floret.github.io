@@ -415,14 +415,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 				
@@ -542,10 +542,23 @@ permalink_defaults:
 --------------------------------------------------------------下面省略，跳到最下面
 deploy:
   type: git     #类型
-  repo: git@github.com:luckyfloret/luckyfloret.github.io.git       #git仓库地址,里面的luckyfloret是github的仓库地址
+  repo: git@github.com:luckyfloret/luckyfloret.github.io.git       #git仓库地址,里面的luckyfloret是github的仓库地址，你看到这里的时候可能会疑惑，所以请先看看章节6，再回头配置这个，千万不要忘记哦
   branch: master           
   message: '站点更新:{{now("YYYY-MM-DD HH/mm/ss")}}'     </code></pre>
-<h3 id="6部署到GitHub上"><a href="#6部署到GitHub上" class="headerlink" title="6部署到GitHub上"></a>6部署到GitHub上</h3><h4 id="6-1设置本机的Git全局配置"><a href="#6-1设置本机的Git全局配置" class="headerlink" title="6.1设置本机的Git全局配置"></a>6.1设置本机的Git全局配置</h4><script>
+<h3 id="6-部署到GitHub上"><a href="#6-部署到GitHub上" class="headerlink" title="6.部署到GitHub上"></a>6.部署到GitHub上</h3><p>github的注册在这里我就不多说了</p>
+<p>在创建github仓库之前先干一件事情，就是把github的私有邮箱关掉，不然会报错哦，请看图<br><img src="https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505173815.png" alt="image-20200505173812384"><br><img src="https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505174240.png" alt="image-20200505174232915"></p>
+<h4 id="6-1创建Github仓库"><a href="#6-1创建Github仓库" class="headerlink" title="6.1创建Github仓库"></a>6.1创建Github仓库</h4><p align="center">看图</p>
+![image-20200505172504474](https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505172508.png)
+![image-20200505173335454](https://gitee.com//luckyfloret/blogimage/raw/master/img/20200505173337.png)
+
+<h4 id="6-2设置本机的Git全局配置"><a href="#6-2设置本机的Git全局配置" class="headerlink" title="6.2设置本机的Git全局配置"></a>6.2设置本机的Git全局配置</h4><pre class=" language-code"><code class="language-code">git config --global user.email example@qq.com //这里的eamil改成自己GitHub上的邮件地址 
+git config --global user.name luckyfloret //这里的name改成你Github的用户名</code></pre>
+<h4 id="6-3生成ssh密码"><a href="#6-3生成ssh密码" class="headerlink" title="6.3生成ssh密码"></a>6.3生成ssh密码</h4><p>生成ssh密钥的作用是将本地文件部署到Github</p>
+<pre class=" language-code"><code class="language-code">cd   //进到根目录
+ssh-keygen -t rsa -C example@qq.com    //不带-C和自己用户名邮箱Github不认可
+less .ssh/id_rsa.pub     /查看密钥</code></pre>
+<h4 id="6-4在Github上导入ssh密钥"><a href="#6-4在Github上导入ssh密钥" class="headerlink" title="6.4在Github上导入ssh密钥"></a>6.4在Github上导入ssh密钥</h4><p>执行<font color="red">less .ssh/id_rsa.pub</font>将里面的内容全部复制</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1060,29 +1073,30 @@ deploy:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/9f65.html">
+                <a href="/posts/ac76.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Hexo+云服务器搭建博客">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Hexo+Github+云服务器搭建博客">
                         
-                        <span class="card-title">Hexo+云服务器搭建博客</span>
+                        <span class="card-title">Hexo+Github+云服务器搭建博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo+云服务器搭建Blog
+                            Hexo+Github+云服务器搭建博客实现双重部署
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1095,6 +1109,7 @@ deploy:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1117,31 +1132,31 @@ deploy:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/e479.html">
+                <a href="/posts/9f65.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="第一篇文章">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Hexo+云服务器搭建博客">
                         
-                        <span class="card-title">第一篇文章</span>
+                        <span class="card-title">Hexo+云服务器搭建博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            关于作者
+                            Hexo+云服务器搭建Blog
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85/" class="post-category">
-                                    关于作者
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
                                 </a>
                             
                             
@@ -1151,8 +1166,12 @@ deploy:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85/">
-                        <span class="chip bg-color">关于作者</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
                     </a>
                     
                 </div>
@@ -1346,7 +1365,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.1k</span>&nbsp;字
+                class="white-color">2.3k</span>&nbsp;字
             
             
             
