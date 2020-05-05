@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Hexo+Github+云服务器搭建博客, HTML,CSS,JavaScript,JQuery,Ajax,Vue.js，Java等">
-    <meta name="description" content="Hexo+Github+云服务器搭建Blog">
+    <meta name="description" content="Hexo+Github+云服务器搭建博客实现双重部署">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -401,21 +401,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-04
+                    2020-05-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-04
+                    2020-05-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    56
+                    332
                 </div>
                 
 
@@ -438,7 +438,23 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>明天更新！！！</p>
+                <p>使用Github的原因是因为双重部署，这样稳一些，好了，废话不多说，看教程！</p>
+<p>搭建环境：CentOS 7.7+Nginx 1.18.0+Node.js 12.4.0+Github</p>
+<h3 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1.安装Git"></a>1.安装Git</h3><p>因为Centos7.7的yum仓库里面Git版本比较旧所以我们采用源码安装新版Git</p>
+<h4 id="1-1安装编译源码依赖包"><a href="#1-1安装编译源码依赖包" class="headerlink" title="1.1安装编译源码依赖包"></a>1.1安装编译源码依赖包</h4><pre class=" language-code"><code class="language-code">yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel</code></pre>
+<pre class=" language-code"><code class="language-code">yum install -y gcc perl-ExtUtils-MakeMaker</code></pre>
+<h4 id="1-2卸载老版本Git"><a href="#1-2卸载老版本Git" class="headerlink" title="1.2卸载老版本Git"></a>1.2卸载老版本Git</h4><pre class=" language-code"><code class="language-code">yum remove -y git</code></pre>
+<h4 id="1-3下载新版Git"><a href="#1-3下载新版Git" class="headerlink" title="1.3下载新版Git"></a>1.3下载新版Git</h4><p><a href="https://mirrors.edge.kernel.org/pub/software/scm/git/" target="_blank" rel="noopener">https://mirrors.edge.kernel.org/pub/software/scm/git/</a><br>这是Git下载目录自行找最新版</p>
+<pre class=" language-code"><code class="language-code">wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz  </code></pre>
+<pre class=" language-code"><code class="language-code">xz -d git-2.9.5.tar.xz          //将xz解压然后得到tar格式压缩文件
+ tar xvf git-2.9.5.tar         //解压tar文件</code></pre>
+<h4 id="1-4编译安装Git"><a href="#1-4编译安装Git" class="headerlink" title="1.4编译安装Git"></a>1.4编译安装Git</h4><pre class=" language-code"><code class="language-code">cd git-2.9.5      //进入文件夹
+make prefix=/usr/local/git all     //编译至该目录下
+make prefix=/usr/local/git install   //安装到该目录</code></pre>
+<p>注意：先编译在安装，编译速度取决于机器性能，等待一下就好了</p>
+<p>编译好后配置环境变量</p>
+<pre class=" language-code"><code class="language-code">vim /etc/profile</code></pre>
+<p>在文件最下面写入变量</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -971,12 +987,12 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo+Github+云服务器搭建Blog
+                            Hexo+Github+云服务器搭建博客实现双重部署
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-05
                             </span>
                         <span class="publish-author">
                             
@@ -1246,7 +1262,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1k</span>&nbsp;字
+                class="white-color">1.3k</span>&nbsp;字
             
             
             

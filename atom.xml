@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.huangmingao.com/"/>
-  <updated>2020-05-04T15:16:42.823Z</updated>
+  <updated>2020-05-05T08:42:22.062Z</updated>
   <id>http://www.huangmingao.com/</id>
   
   <author>
@@ -20,20 +20,18 @@
     <title>Hexo+Github+云服务器搭建博客</title>
     <link href="http://www.huangmingao.com/posts/ac76.html"/>
     <id>http://www.huangmingao.com/posts/ac76.html</id>
-    <published>2020-05-04T15:16:42.823Z</published>
-    <updated>2020-05-04T15:16:42.823Z</updated>
+    <published>2020-05-05T08:42:22.062Z</published>
+    <updated>2020-05-05T08:42:22.062Z</updated>
     
-    <content type="html"><![CDATA[<p>明天更新！！！</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    <content type="html"><![CDATA[<p>使用Github的原因是因为双重部署，这样稳一些，好了，废话不多说，看教程！</p><p>搭建环境：CentOS 7.7+Nginx 1.18.0+Node.js 12.4.0+Github</p><h3 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1.安装Git"></a>1.安装Git</h3><p>因为Centos7.7的yum仓库里面Git版本比较旧所以我们采用源码安装新版Git</p><h4 id="1-1安装编译源码依赖包"><a href="#1-1安装编译源码依赖包" class="headerlink" title="1.1安装编译源码依赖包"></a>1.1安装编译源码依赖包</h4><pre class=" language-code"><code class="language-code">yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel</code></pre><pre class=" language-code"><code class="language-code">yum install -y gcc perl-ExtUtils-MakeMaker</code></pre><h4 id="1-2卸载老版本Git"><a href="#1-2卸载老版本Git" class="headerlink" title="1.2卸载老版本Git"></a>1.2卸载老版本Git</h4><pre class=" language-code"><code class="language-code">yum remove -y git</code></pre><h4 id="1-3下载新版Git"><a href="#1-3下载新版Git" class="headerlink" title="1.3下载新版Git"></a>1.3下载新版Git</h4><p><a href="https://mirrors.edge.kernel.org/pub/software/scm/git/" target="_blank" rel="noopener">https://mirrors.edge.kernel.org/pub/software/scm/git/</a><br>这是Git下载目录自行找最新版</p><pre class=" language-code"><code class="language-code">wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz  </code></pre><pre class=" language-code"><code class="language-code">xz -d git-2.9.5.tar.xz          //将xz解压然后得到tar格式压缩文件 tar xvf git-2.9.5.tar         //解压tar文件</code></pre><h4 id="1-4编译安装Git"><a href="#1-4编译安装Git" class="headerlink" title="1.4编译安装Git"></a>1.4编译安装Git</h4><pre class=" language-code"><code class="language-code">cd git-2.9.5      //进入文件夹make prefix=/usr/local/git all     //编译至该目录下make prefix=/usr/local/git install   //安装到该目录</code></pre><p>注意：先编译在安装，编译速度取决于机器性能，等待一下就好了</p><p>编译好后配置环境变量</p><pre class=" language-code"><code class="language-code">vim /etc/profile</code></pre><p>在文件最下面写入变量</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;明天更新！！！&lt;/p&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { ret
+        &lt;p&gt;使用Github的原因是因为双重部署，这样稳一些，好了，废话不多说，看教程！&lt;/p&gt;
+&lt;p&gt;搭建环境：CentOS 7.7+Nginx 1.18.0+Node.js 12.4.0+Github&lt;/p&gt;
+&lt;h3 id=&quot;1-安装Git&quot;&gt;&lt;a href=&quot;#1-安装Git&quot; 
       
     
     </summary>
