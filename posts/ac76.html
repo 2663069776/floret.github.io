@@ -571,11 +571,11 @@ vim _config.yml</code></pre>
 hexo generate
 
 #将本地仓库更新至Github仓库
-hexo deployer</code></pre>
-<p>执行 hexo deployer 后报错：<font color="red">ERROR Deployer not found: git</font></p>
-<p>这是没安装插件，安装一下插件就好了</p>
+hexo d</code></pre>
+<p>执行 hexo d 后报错：<font color="red">ERROR Deployer not found: git</font></p>
+<p>这是没安装插件的原因，安装一下插件就好了</p>
 <pre class=" language-code"><code class="language-code">npm install --save hexo-deployer-git</code></pre>
-<p>然后再执行hexo deployer就发现部署成功了</p>
+<p>然后再执行 hexo d 就发现部署成功了</p>
 <p>测试访问：<a href="https://luckyfloret.github.io" target="_blank" rel="noopener">https://luckyfloret.github.io</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
