@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Java标识符规范</title>
+      <link href="/posts/1de6.html"/>
+      <url>/posts/1de6.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="标识符规范"><a href="#标识符规范" class="headerlink" title="标识符规范"></a><p align="center">标识符规范</p></h2><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java SE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java SE，学习笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo+Github+云服务器搭建博客</title>
       <link href="/posts/ac76.html"/>
       <url>/posts/ac76.html</url>
