@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangmingao.com/"/>
-  <updated>2020-05-07T16:56:50.701Z</updated>
+  <updated>2020-05-08T12:33:05.911Z</updated>
   <id>https://www.huangmingao.com/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java变量</title>
+    <link href="https://www.huangmingao.com/posts/1de6.html"/>
+    <id>https://www.huangmingao.com/posts/1de6.html</id>
+    <published>2020-05-08T11:30:00.000Z</published>
+    <updated>2020-05-08T12:33:05.911Z</updated>
+    
+    <content type="html"><![CDATA[<p align="center" style="font-size: 20px">成员变量</p>```codepackage com.hmg.Test;<p>/**</p><ul><li><p>成员变量：从属于对象，会自动被初始化。生命周期：对象创建，成员变量也跟着创建，对象消失，成员变量也跟着消失。</p></li><li><p>@author 凉城</p></li><li><p>代码如下：</p></li><li><p>/<br>public class TestVariable {</p><p>  String name;        //定义一个字符串的成员变量，名字为name<br>  String sex;<br>  int age;                //定义一个整型的成员变量，名字为age</p><p>  public static void main(String[] args) {</p><p>  }<br>}</p><pre><code></code></pre></li></ul><p align="center" style="font-size: 20px">静态变量</p>```codepackage com.hmg.Test;<p>/**</p><ul><li><p>静态变量：从属于类。生命周期：类被加载，静态变量就有效，类被卸载，静态变量也会消失。</p></li><li><p>@author 凉城</p></li><li><p>代码如下：</p></li><li><p>/<br>public class TestVariable {</p><p>  static String name;        //定义一个字符串的静态变量，名字为name<br>  static String sex;<br>  static int age;                //定义一个整型的静态变量，名字为age</p><p>  public static void main(String[] args) {</p><p>  }<br>}</p><pre><code></code></pre></li></ul><p align="center" style="font-size: 20px">局部变量</p>```codepackage com.hmg.Test;<p>/**</p><ul><li>局部变量：从属于方法或语句块，先赋值再使用，因为不会自动初始化。生命周期：从声明位置开始，直到方法或语句块执行完毕，局部变量就会消失。</li><li>@author 凉城</li><li>代码如下：</li><li>/<br>public class TestVariable {<br>  public static void main(String[] args) {<pre><code>  String name;        //定义一个字符串的局部变量，名字name  String sex;  int age;                //定义一个整型的局部变量，名字age</code></pre>  }<br>}<pre><code></code></pre></li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p align=&quot;center&quot; style=&quot;font-size: 20px&quot;&gt;成员变量&lt;/p&gt;
+```code
+package com.hmg.Test;
+
+&lt;p&gt;/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;成员变量：从属于对象，会自动被初始化。生命周期：对象创建，成员变量也跟
+      
+    
+    </summary>
+    
+    
+      <category term="Java SE" scheme="https://www.huangmingao.com/categories/Java-SE/"/>
+    
+    
+      <category term="Java SE" scheme="https://www.huangmingao.com/tags/Java-SE/"/>
+    
+      <category term="学习笔记" scheme="https://www.huangmingao.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java标识符规范</title>
     <link href="https://www.huangmingao.com/posts/1de6.html"/>
     <id>https://www.huangmingao.com/posts/1de6.html</id>
     <published>2020-05-07T16:00:00.000Z</published>
-    <updated>2020-05-07T16:56:50.701Z</updated>
+    <updated>2020-05-07T16:57:03.838Z</updated>
     
     <content type="html"><![CDATA[<p align="center" style=" font-size:20px "><strong>标识符规范</strong></p><p>1.标识符必须以字母、下划线“_” 、美元符“$”开头。</p><p>2.标识符其他部分可以是字母、下划线“_” 、美元符“$”和数字任意组合。</p><p>3.Java标识符大小写敏感，且长度无限制。</p><p>4.标识符不可以是Java的关键字。</p><p>【注意】：Java不采用通常语言使用的ASCII字符集，而是采用Unicode这样标准的国际字符集。<br>因此，这里字母的含义不仅仅是英文、还包括汉字等等。不建议使用汉字来定义标识符。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     

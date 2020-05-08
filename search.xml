@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Java变量</title>
+      <link href="/posts/1de6.html"/>
+      <url>/posts/1de6.html</url>
+      
+        <content type="html"><![CDATA[<p align="center" style="font-size: 20px">成员变量</p>```codepackage com.hmg.Test;<p>/**</p><ul><li><p>成员变量：从属于对象，会自动被初始化。生命周期：对象创建，成员变量也跟着创建，对象消失，成员变量也跟着消失。</p></li><li><p>@author 凉城</p></li><li><p>代码如下：</p></li><li><p>/<br>public class TestVariable {</p><p>  String name;        //定义一个字符串的成员变量，名字为name<br>  String sex;<br>  int age;                //定义一个整型的成员变量，名字为age</p><p>  public static void main(String[] args) {</p><p>  }<br>}</p><pre><code></code></pre></li></ul><p align="center" style="font-size: 20px">静态变量</p>```codepackage com.hmg.Test;<p>/**</p><ul><li><p>静态变量：从属于类。生命周期：类被加载，静态变量就有效，类被卸载，静态变量也会消失。</p></li><li><p>@author 凉城</p></li><li><p>代码如下：</p></li><li><p>/<br>public class TestVariable {</p><p>  static String name;        //定义一个字符串的静态变量，名字为name<br>  static String sex;<br>  static int age;                //定义一个整型的静态变量，名字为age</p><p>  public static void main(String[] args) {</p><p>  }<br>}</p><pre><code></code></pre></li></ul><p align="center" style="font-size: 20px">局部变量</p>```codepackage com.hmg.Test;<p>/**</p><ul><li>局部变量：从属于方法或语句块，先赋值再使用，因为不会自动初始化。生命周期：从声明位置开始，直到方法或语句块执行完毕，局部变量就会消失。</li><li>@author 凉城</li><li>代码如下：</li><li>/<br>public class TestVariable {<br>  public static void main(String[] args) {<pre><code>  String name;        //定义一个字符串的局部变量，名字name  String sex;  int age;                //定义一个整型的局部变量，名字age</code></pre>  }<br>}<pre><code></code></pre></li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java SE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java SE </tag>
+            
+            <tag> 学习笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java标识符规范</title>
       <link href="/posts/1de6.html"/>
       <url>/posts/1de6.html</url>
