@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.huangmingao.com/"/>
-  <updated>2020-05-08T12:33:05.911Z</updated>
+  <updated>2020-05-08T12:43:15.267Z</updated>
   <id>https://www.huangmingao.com/</id>
   
   <author>
@@ -18,24 +18,18 @@
   
   <entry>
     <title>Java变量</title>
-    <link href="https://www.huangmingao.com/posts/1de6.html"/>
-    <id>https://www.huangmingao.com/posts/1de6.html</id>
+    <link href="https://www.huangmingao.com/posts/84ef.html"/>
+    <id>https://www.huangmingao.com/posts/84ef.html</id>
     <published>2020-05-08T11:30:00.000Z</published>
-    <updated>2020-05-08T12:33:05.911Z</updated>
+    <updated>2020-05-08T12:43:15.267Z</updated>
     
-    <content type="html"><![CDATA[<p align="center" style="font-size: 20px">成员变量</p>```codepackage com.hmg.Test;<p>/**</p><ul><li><p>成员变量：从属于对象，会自动被初始化。生命周期：对象创建，成员变量也跟着创建，对象消失，成员变量也跟着消失。</p></li><li><p>@author 凉城</p></li><li><p>代码如下：</p></li><li><p>/<br>public class TestVariable {</p><p>  String name;        //定义一个字符串的成员变量，名字为name<br>  String sex;<br>  int age;                //定义一个整型的成员变量，名字为age</p><p>  public static void main(String[] args) {</p><p>  }<br>}</p><pre><code></code></pre></li></ul><p align="center" style="font-size: 20px">静态变量</p>```codepackage com.hmg.Test;<p>/**</p><ul><li><p>静态变量：从属于类。生命周期：类被加载，静态变量就有效，类被卸载，静态变量也会消失。</p></li><li><p>@author 凉城</p></li><li><p>代码如下：</p></li><li><p>/<br>public class TestVariable {</p><p>  static String name;        //定义一个字符串的静态变量，名字为name<br>  static String sex;<br>  static int age;                //定义一个整型的静态变量，名字为age</p><p>  public static void main(String[] args) {</p><p>  }<br>}</p><pre><code></code></pre></li></ul><p align="center" style="font-size: 20px">局部变量</p>```codepackage com.hmg.Test;<p>/**</p><ul><li>局部变量：从属于方法或语句块，先赋值再使用，因为不会自动初始化。生命周期：从声明位置开始，直到方法或语句块执行完毕，局部变量就会消失。</li><li>@author 凉城</li><li>代码如下：</li><li>/<br>public class TestVariable {<br>  public static void main(String[] args) {<pre><code>  String name;        //定义一个字符串的局部变量，名字name  String sex;  int age;                //定义一个整型的局部变量，名字age</code></pre>  }<br>}<pre><code></code></pre></li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    <content type="html"><![CDATA[<h3 id="介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。"><a href="#介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。" class="headerlink" title="介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。"></a><p align="center">介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。</p></h3><h3 id="1-成员变量"><a href="#1-成员变量" class="headerlink" title="1.成员变量"></a><p align="center" style="font-size: 20px">1.成员变量</p></h3><pre class=" language-code"><code class="language-code">package com.hmg.Test;/** * 成员变量：从属于对象，会自动被初始化。生命周期：对象创建，成员变量也跟着创建，对象消失，成员变量也跟着消失。 * @author 凉城 * 代码如下： */public class TestVariable {    String name;        //定义一个字符串的成员变量，名字为name    String sex;                int age;                //定义一个整型的成员变量，名字为age    public static void main(String[] args) {    }}</code></pre><h3 id="2-静态变量"><a href="#2-静态变量" class="headerlink" title="2.静态变量"></a><p align="center" style="font-size: 20px">2.静态变量</p></h3><pre class=" language-code"><code class="language-code">package com.hmg.Test;/** * 静态变量：从属于类。生命周期：类被加载，静态变量就有效，类被卸载，静态变量也会消失。 * @author 凉城 * 代码如下： */public class TestVariable {    static String name;        //定义一个字符串的静态变量，名字为name    static String sex;                static int age;                //定义一个整型的静态变量，名字为age    public static void main(String[] args) {    }}</code></pre><h3 id="3-局部变量"><a href="#3-局部变量" class="headerlink" title="3.局部变量"></a><p align="center" style="font-size: 20px">3.局部变量</p></h3><pre class=" language-code"><code class="language-code">package com.hmg.Test;/** * 局部变量：从属于方法或语句块，先赋值再使用，因为不会自动初始化。生命周期：从声明位置开始，直到方法或语句块执行完毕，局部变量就会消失。 * @author 凉城 * 代码如下： */public class TestVariable {    public static void main(String[] args) {        String name;        //定义一个字符串的局部变量，名字name        String sex;        int age;                //定义一个整型的局部变量，名字age    }}</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p align=&quot;center&quot; style=&quot;font-size: 20px&quot;&gt;成员变量&lt;/p&gt;
-```code
-package com.hmg.Test;
-
-&lt;p&gt;/**&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;成员变量：从属于对象，会自动被初始化。生命周期：对象创建，成员变量也跟
+        &lt;h3 id=&quot;介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。&quot;&gt;&lt;a href=&quot;#介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。&quot; class=&quot;headerlink&quot; title=&quot;介绍：Jav
       
     
     </summary>

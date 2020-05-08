@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java标识符规范, HTML,CSS,JavaScript,JQuery,Ajax,Vue.js，Java等">
-    <meta name="description" content="我们来讲讲Java标识符的规范">
+    <meta name="keywords" content="Java变量, HTML,CSS,JavaScript,JQuery,Ajax,Vue.js，Java等">
+    <meta name="description" content="我们来讲讲Java变量">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java标识符规范 | 凉城</title>
+    <title>Java变量 | 凉城</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -250,12 +250,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java标识符规范</h1>
+                    <h1 class="description center-align post-title">Java变量</h1>
                 </div>
             </div>
         </div>
@@ -415,7 +415,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    197
+                    411
                 </div>
                 
 
@@ -438,13 +438,57 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p align="center" style=" font-size:20px "><strong>标识符规范</strong></p>
+                <h3 id="介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。"><a href="#介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。" class="headerlink" title="介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。"></a><p align="center">介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。</p></h3><h3 id="1-成员变量"><a href="#1-成员变量" class="headerlink" title="1.成员变量"></a><p align="center" style="font-size: 20px">1.成员变量</p></h3><pre class=" language-code"><code class="language-code">package com.hmg.Test;
 
-<p>1.标识符必须以字母、下划线“_” 、美元符“$”开头。</p>
-<p>2.标识符其他部分可以是字母、下划线“_” 、美元符“$”和数字任意组合。</p>
-<p>3.Java标识符大小写敏感，且长度无限制。</p>
-<p>4.标识符不可以是Java的关键字。</p>
-<p>【注意】：Java不采用通常语言使用的ASCII字符集，而是采用Unicode这样标准的国际字符集。<br>因此，这里字母的含义不仅仅是英文、还包括汉字等等。不建议使用汉字来定义标识符。</p>
+/**
+ * 成员变量：从属于对象，会自动被初始化。生命周期：对象创建，成员变量也跟着创建，对象消失，成员变量也跟着消失。
+ * @author 凉城
+ * 代码如下：
+ */
+public class TestVariable {
+
+    String name;        //定义一个字符串的成员变量，名字为name
+    String sex;            
+    int age;                //定义一个整型的成员变量，名字为age
+
+    public static void main(String[] args) {
+
+    }
+}
+</code></pre>
+<h3 id="2-静态变量"><a href="#2-静态变量" class="headerlink" title="2.静态变量"></a><p align="center" style="font-size: 20px">2.静态变量</p></h3><pre class=" language-code"><code class="language-code">package com.hmg.Test;
+
+/**
+ * 静态变量：从属于类。生命周期：类被加载，静态变量就有效，类被卸载，静态变量也会消失。
+ * @author 凉城
+ * 代码如下：
+ */
+public class TestVariable {
+
+    static String name;        //定义一个字符串的静态变量，名字为name
+    static String sex;            
+    static int age;                //定义一个整型的静态变量，名字为age
+
+    public static void main(String[] args) {
+
+    }
+}
+</code></pre>
+<h3 id="3-局部变量"><a href="#3-局部变量" class="headerlink" title="3.局部变量"></a><p align="center" style="font-size: 20px">3.局部变量</p></h3><pre class=" language-code"><code class="language-code">package com.hmg.Test;
+
+/**
+ * 局部变量：从属于方法或语句块，先赋值再使用，因为不会自动初始化。生命周期：从声明位置开始，直到方法或语句块执行完毕，局部变量就会消失。
+ * @author 凉城
+ * 代码如下：
+ */
+public class TestVariable {
+    public static void main(String[] args) {
+        String name;        //定义一个字符串的局部变量，名字name
+        String sex;
+        int age;                //定义一个整型的局部变量，名字age
+    }
+}
+</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -488,7 +532,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.huangmingao.com/posts/1de6.html">https://www.huangmingao.com/posts/1de6.html</a>
+                    <a href="https://www.huangmingao.com/posts/84ef.html">https://www.huangmingao.com/posts/84ef.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -960,9 +1004,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/84ef.html">
                     <div class="card-image">
@@ -980,9 +1025,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -995,6 +1040,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1017,31 +1063,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/ac76.html">
+                <a href="/posts/1de6.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Hexo+Github+云服务器搭建博客">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Java标识符规范">
                         
-                        <span class="card-title">Hexo+Github+云服务器搭建博客</span>
+                        <span class="card-title">Java标识符规范</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo+Github+云服务器搭建博客实现双重部署
+                            我们来讲讲Java标识符的规范
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
+                            <a href="/categories/Java-SE/" class="post-category">
+                                    Java SE
                                 </a>
                             
                             
@@ -1051,12 +1097,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Java-SE/">
+                        <span class="chip bg-color">Java SE</span>
                     </a>
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
                     </a>
                     
                 </div>
