@@ -31,6 +31,33 @@
     
     
     <entry>
+      <title>Java命名规范</title>
+      <link href="/posts/ad0e.html"/>
+      <url>/posts/ad0e.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-所有变量、方法、类名：见名知意（意思是：见到你的变量名、方法名、类名就可以知道是用来干嘛的）"><a href="#1-所有变量、方法、类名：见名知意（意思是：见到你的变量名、方法名、类名就可以知道是用来干嘛的）" class="headerlink" title="1.所有变量、方法、类名：见名知意（意思是：见到你的变量名、方法名、类名就可以知道是用来干嘛的）"></a><p align="center">1.所有变量、方法、类名：见名知意（意思是：见到你的变量名、方法名、类名就可以知道是用来干嘛的）</p></h3><h3 id="2，类成员变量：首字母小写和驼峰原则，例如：monthSalary"><a href="#2，类成员变量：首字母小写和驼峰原则，例如：monthSalary" class="headerlink" title="2，类成员变量：首字母小写和驼峰原则，例如：monthSalary"></a><p align="center">2，类成员变量：首字母小写和驼峰原则，例如：monthSalary</p></h3><h3 id="3-局部变量：首字母小写和驼峰原则"><a href="#3-局部变量：首字母小写和驼峰原则" class="headerlink" title="3.局部变量：首字母小写和驼峰原则"></a><p align="center">3.局部变量：首字母小写和驼峰原则</p></h3><h3 id="4-常量：大写字母和下划线，例如：MAX-VALUY"><a href="#4-常量：大写字母和下划线，例如：MAX-VALUY" class="headerlink" title="4.常量：大写字母和下划线，例如：MAX_VALUY"></a><p align="center">4.常量：大写字母和下划线，例如：MAX_VALUY</p></h3><h3 id="5-类名：首字母大写和驼峰原则，例如：Man，TestDemo"><a href="#5-类名：首字母大写和驼峰原则，例如：Man，TestDemo" class="headerlink" title="5.类名：首字母大写和驼峰原则，例如：Man，TestDemo"></a><p align="center">5.类名：首字母大写和驼峰原则，例如：Man，TestDemo</p></h3><h3 id="6-方法名：首字母小写和驼峰原则，例如：run-，runRun"><a href="#6-方法名：首字母小写和驼峰原则，例如：run-，runRun" class="headerlink" title="6.方法名：首字母小写和驼峰原则，例如：run()，runRun()"></a><p align="center">6.方法名：首字母小写和驼峰原则，例如：run()，runRun()</p></h3><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java SE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java SE </tag>
+            
+            <tag> 学习笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java标识符规范</title>
       <link href="/posts/1de6.html"/>
       <url>/posts/1de6.html</url>
