@@ -4,9 +4,90 @@
   
     
     <entry>
-      <title>Java变量</title>
-      <link href="/posts/84ef.html"/>
-      <url>/posts/84ef.html</url>
+      <title>数据类型</title>
+      <link href="/posts/a173.html"/>
+      <url>/posts/a173.html</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java SE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java SE </tag>
+            
+            <tag> 学习笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>运算符</title>
+      <link href="/posts/b497.html"/>
+      <url>/posts/b497.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-运算符优先级"><a href="#1-运算符优先级" class="headerlink" title="1.运算符优先级"></a><p align="center" style="font-size: 20px"><strong>1.运算符优先级<strong></strong></strong></p><p></p><p></p></h3><table boder="1"><tbody><tr><th>优先级</th><th>运算符</th><th>类</th><th>结合性</th></tr><tr><td>1</td><td>（）</td><td>括号运算符</td><td>由左至右</td></tr><tr><td>2</td><td>!、+（正号）、-（负号）</td><td>一元运算符</td><td>由左至右</td></tr><tr><td>2</td><td>~</td><td>位逻辑运算符</td><td>由右至左</td></tr><tr><td>2</td><td>++、--</td><td>递增与递减运算符</td><td>由右至左</td></tr><tr><td>3</td><td>*、/、%</td><td>算术运算符</td><td>由左至右</td></tr><tr><td>4</td><td>+、-</td><td>算术运算符</td><td>由左至右</td></tr><tr><td>5</td><td> &lt;&lt;、&gt;&gt; <!--、--></td><td>位左移、右移运算符</td><td>由左至右</td></tr><tr><td>6</td><td>&gt;、&gt;=、&lt;、&lt;=&lt; td&gt;</td><td>关系运算符</td><td>由左至右</td><!--、<=<--></tr><tr><td>7</td><td>==、!=</td><td>关系运算符</td><td>由左至右</td></tr><tr><td>8</td><td>&amp;</td><td>位运算符、逻辑运算符</td><td>由左至右</td></tr><tr><td>9</td><td>^</td><td>位运算符、逻辑运算符</td><td>由左至右</td></tr><tr><td>10</td><td>|</td><td>位运算符、逻辑运算符</td><td>由左至右</td></tr><tr><td>11</td><td>&amp;&amp;</td><td>逻辑运算符</td><td>由左至右</td></tr><tr><td>12</td><td>||</td><td>逻辑运算符</td><td>由左至右</td></tr><tr><td>13</td><td>?:</td><td>条件运算符</td><td>由右至左</td></tr><tr><td>14</td><td>=、+=、-=、*=、/=、%=</td><td>赋值运算符、扩展运算符</td><td>由右至左</td></tr></tbody></table><h3 id="2-逻辑运算符"><a href="#2-逻辑运算符" class="headerlink" title="2.逻辑运算符"></a><p align="center" style="font-size: 20px"><strong>2.逻辑运算符<strong></strong></strong></p><p></p><p></p></h3><table boder="1"><tbody><tr><th colspan="2">运算符</th><th>说明</th></tr><tr><td>逻辑与</td><td>&amp;（与）</td><td>两个操作数为true，结果才是true，否则是false</td></tr><tr><td>逻辑或</td><td>|（或）</td><td>两个操作数有一个是true，结果就是true</td></tr><tr><td>短路与</td><td>&amp;&amp;（与）</td><td>只要有一个为false，结果就是false</td></tr><tr><td>短路或</td><td>||（或）</td><td>只要有一个是true，结果就是true</td></tr><tr><td>逻辑非</td><td>!（非）</td><td>取反：!false为true,!true为false</td></tr><tr><td>逻辑异或</td><td>^（异或）</td><td>相同为false，不同为true</td></tr></tbody></table><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java SE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java SE </tag>
+            
+            <tag> 学习笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>命名规范</title>
+      <link href="/posts/ad0e.html"/>
+      <url>/posts/ad0e.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-所有变量、方法、类名：见名知意（意思是：见到你的变量名、方法名、类名就可以知道是用来干嘛的）"><a href="#1-所有变量、方法、类名：见名知意（意思是：见到你的变量名、方法名、类名就可以知道是用来干嘛的）" class="headerlink" title="1.所有变量、方法、类名：见名知意（意思是：见到你的变量名、方法名、类名就可以知道是用来干嘛的）"></a><p align="center">1.所有变量、方法、类名：见名知意（意思是：见到你的变量名、方法名、类名就可以知道是用来干嘛的）</p></h3><p><strong>例如：</strong></p><pre class=" language-code"><code class="language-code">package com.hmg.Test;//测试变量，这一看类名就可以知道他的用意了，Test(测试)，Variable(变量)public class TestVariable {    public static void main(String[] args) {        String name;                String sex;        int age;            }}</code></pre><h3 id="2，类成员变量：首字母小写和驼峰原则，例如：monthSalary"><a href="#2，类成员变量：首字母小写和驼峰原则，例如：monthSalary" class="headerlink" title="2，类成员变量：首字母小写和驼峰原则，例如：monthSalary"></a><p align="center">2，类成员变量：首字母小写和驼峰原则，例如：monthSalary</p></h3><p><strong>代码如下：</strong></p><pre class=" language-code"><code class="language-code">package com.hmg.Test;/** * 测试命名规范 * @author 123456 * */public class TestNamingConventions {    String userName;    double monthSalary;;    public static void main(String[] args) {    }}</code></pre><h3 id="3-局部变量：首字母小写和驼峰原则"><a href="#3-局部变量：首字母小写和驼峰原则" class="headerlink" title="3.局部变量：首字母小写和驼峰原则"></a><p align="center">3.局部变量：首字母小写和驼峰原则</p></h3><p><strong>代码如下：</strong></p><pre class=" language-code"><code class="language-code">package com.hmg.Test;/** * 测试命名规范 * @author 123456 * */public class TestNamingConventions {    public static void main(String[] args) {        double monthSalary;    }}</code></pre><h3 id="4-常量：大写字母和下划线，例如：MAX-VALUY"><a href="#4-常量：大写字母和下划线，例如：MAX-VALUY" class="headerlink" title="4.常量：大写字母和下划线，例如：MAX_VALUY"></a><p align="center">4.常量：大写字母和下划线，例如：MAX_VALUY</p></h3><p><strong>代码如下：</strong></p><pre class=" language-code"><code class="language-code">package com.hmg.Test;/** * 测试命名规范 * @author 123456 * */public class TestNamingConventions {    public static void main(String[] args) {        String MAX_VALUY;        String USER_NAME;    }}</code></pre><h3 id="5-类名：首字母大写和驼峰原则，例如：Man，TestDemo"><a href="#5-类名：首字母大写和驼峰原则，例如：Man，TestDemo" class="headerlink" title="5.类名：首字母大写和驼峰原则，例如：Man，TestDemo"></a><p align="center">5.类名：首字母大写和驼峰原则，例如：Man，TestDemo</p></h3><p><strong>代码如下：</strong></p><pre class=" language-code"><code class="language-code">package com.hmg.Test;/** * 测试命名规范 * @author 123456 * */public class TestNamingConventions {    public static void main(String[] args) {    }}</code></pre><h3 id="6-方法名：首字母小写和驼峰原则，例如：run-，runRun"><a href="#6-方法名：首字母小写和驼峰原则，例如：run-，runRun" class="headerlink" title="6.方法名：首字母小写和驼峰原则，例如：run()，runRun()"></a><p align="center">6.方法名：首字母小写和驼峰原则，例如：run()，runRun()</p></h3><p><strong>代码如下：</strong></p><pre class=" language-code"><code class="language-code">package com.hmg.Test;/** * 测试命名规范 * @author 123456 * */public class TestNamingConventions {    public void test() {    }    public void userName() {    }}</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java SE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java SE </tag>
+            
+            <tag> 学习笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>变量</title>
+      <link href="/posts/2a9f.html"/>
+      <url>/posts/2a9f.html</url>
       
         <content type="html"><![CDATA[<h3 id="介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。"><a href="#介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。" class="headerlink" title="介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。"></a><p align="center">介绍：Java变量一共有3种，分别是：成员变量、静态变量、局部变量，接下来我们往下看。</p></h3><h3 id="1-成员变量"><a href="#1-成员变量" class="headerlink" title="1.成员变量"></a><p align="center" style="font-size: 20px">1.成员变量</p></h3><pre class=" language-code"><code class="language-code">package com.hmg.Test;/** * 成员变量：从属于对象，会自动被初始化。生命周期：对象创建，成员变量也跟着创建，对象消失，成员变量也跟着消失。 * @author 凉城 * 代码如下： */public class TestVariable {    String name;        //定义一个字符串的成员变量，名字为name    String sex;                int age;                //定义一个整型的成员变量，名字为age    public static void main(String[] args) {    }}</code></pre><h3 id="2-静态变量"><a href="#2-静态变量" class="headerlink" title="2.静态变量"></a><p align="center" style="font-size: 20px">2.静态变量</p></h3><pre class=" language-code"><code class="language-code">package com.hmg.Test;/** * 静态变量：从属于类。生命周期：类被加载，静态变量就有效，类被卸载，静态变量也会消失。 * @author 凉城 * 代码如下： */public class TestVariable {    static String name;        //定义一个字符串的静态变量，名字为name    static String sex;                static int age;                //定义一个整型的静态变量，名字为age    public static void main(String[] args) {    }}</code></pre><h3 id="3-局部变量"><a href="#3-局部变量" class="headerlink" title="3.局部变量"></a><p align="center" style="font-size: 20px">3.局部变量</p></h3><pre class=" language-code"><code class="language-code">package com.hmg.Test;/** * 局部变量：从属于方法或语句块，先赋值再使用，因为不会自动初始化。生命周期：从声明位置开始，直到方法或语句块执行完毕，局部变量就会消失。 * @author 凉城 * 代码如下： */public class TestVariable {    public static void main(String[] args) {        String name;        //定义一个字符串的局部变量，名字name        String sex;        int age;                //定义一个整型的局部变量，名字age    }}</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
@@ -31,34 +112,7 @@
     
     
     <entry>
-      <title>Java命名规范</title>
-      <link href="/posts/ad0e.html"/>
-      <url>/posts/ad0e.html</url>
-      
-        <content type="html"><![CDATA[<h3 id="1-所有变量、方法、类名：见名知意（意思是：见到你的变量名、方法名、类名就可以知道是用来干嘛的）"><a href="#1-所有变量、方法、类名：见名知意（意思是：见到你的变量名、方法名、类名就可以知道是用来干嘛的）" class="headerlink" title="1.所有变量、方法、类名：见名知意（意思是：见到你的变量名、方法名、类名就可以知道是用来干嘛的）"></a><p align="center">1.所有变量、方法、类名：见名知意（意思是：见到你的变量名、方法名、类名就可以知道是用来干嘛的）</p></h3><h3 id="2，类成员变量：首字母小写和驼峰原则，例如：monthSalary"><a href="#2，类成员变量：首字母小写和驼峰原则，例如：monthSalary" class="headerlink" title="2，类成员变量：首字母小写和驼峰原则，例如：monthSalary"></a><p align="center">2，类成员变量：首字母小写和驼峰原则，例如：monthSalary</p></h3><h3 id="3-局部变量：首字母小写和驼峰原则"><a href="#3-局部变量：首字母小写和驼峰原则" class="headerlink" title="3.局部变量：首字母小写和驼峰原则"></a><p align="center">3.局部变量：首字母小写和驼峰原则</p></h3><h3 id="4-常量：大写字母和下划线，例如：MAX-VALUY"><a href="#4-常量：大写字母和下划线，例如：MAX-VALUY" class="headerlink" title="4.常量：大写字母和下划线，例如：MAX_VALUY"></a><p align="center">4.常量：大写字母和下划线，例如：MAX_VALUY</p></h3><h3 id="5-类名：首字母大写和驼峰原则，例如：Man，TestDemo"><a href="#5-类名：首字母大写和驼峰原则，例如：Man，TestDemo" class="headerlink" title="5.类名：首字母大写和驼峰原则，例如：Man，TestDemo"></a><p align="center">5.类名：首字母大写和驼峰原则，例如：Man，TestDemo</p></h3><h3 id="6-方法名：首字母小写和驼峰原则，例如：run-，runRun"><a href="#6-方法名：首字母小写和驼峰原则，例如：run-，runRun" class="headerlink" title="6.方法名：首字母小写和驼峰原则，例如：run()，runRun()"></a><p align="center">6.方法名：首字母小写和驼峰原则，例如：run()，runRun()</p></h3><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java SE </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java SE </tag>
-            
-            <tag> 学习笔记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Java标识符规范</title>
+      <title>标识符规范</title>
       <link href="/posts/1de6.html"/>
       <url>/posts/1de6.html</url>
       
